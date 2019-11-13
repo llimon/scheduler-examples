@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: bye-world-
+spec:
+  entrypoint: whalesay
+  arguments:
+    parameters:
+    - name: hello
+    - name: bye
+    - name: what
+  templates:
+  - name: whalesay
+    container:
+      image: alpine:latest
+      command: ["/bin/echo"]
+      args: ["{{workflow.parameters.bye}}"]
