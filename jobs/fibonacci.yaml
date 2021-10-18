@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: fibonacci
+spec:
+  template:
+    spec:
+      containers:
+      - name: fibonacci
+        image: perl
+        command: ["perl",  "-Mbignum=bpi", "-wle", "perl -le ' $==1,(1 x $_)=~/(^)(1|11\1)*(?{$=++})^/,print $= for 0..30+0'"]
+        #command: ["bash", "-c", "exit 1" ]
+      restartPolicy: Never
+  backoffLimit: 1
