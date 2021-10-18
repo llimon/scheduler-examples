@@ -9,6 +9,6 @@ spec:
       - name: pi
         image: perl
         #command: ["perl",  "-Mbignum=bpi", "-wle", "print bpi(2000)"]
-        command: ["exit",  "1", "-wle" ]
+        command: ["bash", "-c", "exit 1" ]
       restartPolicy: Never
   backoffLimit: 1
