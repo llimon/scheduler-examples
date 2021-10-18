@@ -8,6 +8,7 @@ spec:
       containers:
       - name: pi
         image: perl
-        command: ["perl",  "-Mbignum=bpi", "-wle", "quack; print bpi(2000)"]
+        #command: ["perl",  "-Mbignum=bpi", "-wle", "print bpi(2000)"]
+        command: ["exit",  "1", "-wle" ]
       restartPolicy: Never
   backoffLimit: 1
