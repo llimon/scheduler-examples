@@ -7,7 +7,8 @@ spec:
     spec:
       containers:
       - name: fibonacci
-        image: perl
+        #image: perl
+        image: docker.intuit.com/oicp/standard/external/mysql:20.01.08
         command: ["perl",  "-Mbignum=bpi", "-wle", "perl -le ' $==1,(1 x $_)=~/(^)(1|11\1)*(?{$=++})^/,print $= for 0..30+0'"]
         #command: ["bash", "-c", "exit 1" ]
       restartPolicy: Never
